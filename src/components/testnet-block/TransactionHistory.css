@@ -1,0 +1,95 @@
+   .transaction-container {
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #f0f0f0;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .transaction-details {
+    display: flex;
+    padding: 15px;
+  }
+  
+  .transaction-info {
+    flex: 1;
+  }
+  
+  .info-row {
+    margin-bottom: 10px;
+    padding-top: 15px;
+  }
+  
+  .info-label {
+    font-weight: bold;
+  }
+  
+  .transaction-graph {
+    flex: 1;
+    /* Add styles for your graph or visualization */
+  }
+
+
+  .transaction-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  .transaction-table td,
+  .transaction-table th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    font-size:0.38cm;
+  }
+  
+  .transaction-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .transaction-form {
+    display: flex;
+    align-items: center;
+  }
+  
+  .transaction-input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .transaction-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .transaction-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .app-container {
+    position: relative;
+  }
+  
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999; /* Ensure the header appears above other content */
+  }
+  
+  .main-content {
+    margin-top: 80px; /* Adjust this value to accommodate the height of your header */
+  }
+  

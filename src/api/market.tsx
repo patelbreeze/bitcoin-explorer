@@ -1,12 +1,37 @@
-// src/api/axios.ts
-
+import express from 'express';
 import axios from 'axios';
+import cors from 'cors';
 
-const instance = axios.create({
-    baseURL: 'https://rest.cryptoapis.io/v2/', // Your API base URL
-    headers: {
-      'X-API-Key': process.env.API_KEY // Replace with your actual API key
-    }
-  });
+const app = express();
+const PORT = 5000;
 
-export default instance;
+app.use(cors());
+
+app.get('/api/transaction/:transactionId', async (req, res) => {
+  try {
+    const transactionId = req.params.transactionId;
+    const apiKey = '6ce40de53ed5fb01aabb4183767a1068907e4533';
+    const url = `https://rest.cryptoapis.io/v2/blockchain-data/bitcoin/testnet/transactions/${transactionId}`;
+
+    const instance = await axios.get(url, {
+      headers: {
+        'Content-Type': 'application/json',
+        'X-API-Key': apiKey
+      }
+    });
+
+    const transactionData = instance.data;
+    res.json(transactionData);
+  } catch (error) {
+    console.error('Error fetching transaction data:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
+
+
+
+// export default instance;
